@@ -107,10 +107,7 @@ def restdetails(request,rid):
                      'cartitem':cartitem,
                      'total':total,
                      'delcharge':delcharge,
-                 
-                     
-                  
-                     
+                       
                 }
         
         
@@ -166,8 +163,30 @@ def decrement_quantity(request,cart_id):
 
 
 def checkout(request):
-   
-    return render(request, 'user/checkout.html')
+        crt = Cart.objects.filter(userid=request.session['id'])
+        price=itotal=total=0
+
+        for i in crt:
+          price = i.menuid.iprice * i.quantity
+          itotal = itotal + price 
+          
+        total=itotal
+     
+        if total>250 and total<500:
+             delcharge=20
+        elif total<250:
+             delcharge=10
+        elif total>=500 and total<1000:
+             delcharge=40
+        elif total>=1000 and total<2000:
+             delcharge=60
+        elif total>=2000:
+             delcharge=90
+        context = {
+             "total" : total,
+             "delcharge" : delcharge, 
+        }
+        return render(request, 'user/checkout.html',context)
 
 # def apply_cart(request):
 #     if request.method == 'POST':
