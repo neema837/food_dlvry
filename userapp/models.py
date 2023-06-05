@@ -29,7 +29,7 @@ class Cart(models.Model):
 
 class Order(models.Model):
     userid=models.ForeignKey(userreg, on_delete=models.CASCADE,null=True,blank=True)
-    cartid=models.ManyToManyField(Cart,null=True,blank=True)
+    cartid=models.ManyToManyField(Cart)
     orderid=models.IntegerField(null=True,blank=True)
     status=models.BooleanField(default=True)
 
