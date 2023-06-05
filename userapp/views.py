@@ -160,11 +160,13 @@ def decrement_quantity(request,cart_id):
                 cart.quantity -= 1
                 cart.save()        
             return redirect('restdetails', rid=cart.restid.id) 
-
+from fooddelivery.settings import RAZORPAY_API_KEY , RAZORPAY_API_SECRET_KEY
+import razorpay
+client = razorpay.Client(auth=(RAZORPAY_API_KEY, RAZORPAY_API_SECRET_KEY))
 
 def checkout(request):
         crt = Cart.objects.filter(userid=request.session['id'])
-        price=itotal=total=0
+        price=itotal=total=subtot=0
 
         for i in crt:
           price = i.menuid.iprice * i.quantity
@@ -182,11 +184,25 @@ def checkout(request):
              delcharge=60
         elif total>=2000:
              delcharge=90
+
+        subtot = total + delcharge
+        print(subtot)
+        currency ="INR"
+        api_key=RAZORPAY_API_KEY
+        amt=int(subtot)*100  
+        payment_order= client.order.create(dict(amount=amt,currency="INR",payment_capture=1))
+        payment_order_id= payment_order['id']
         context = {
-             "total" : total,
-             "delcharge" : delcharge, 
-        }
+            'api_key':api_key,
+            'order_id':payment_order_id,
+                "total" : total,
+                "delcharge" : delcharge, 
+            }
         return render(request, 'user/checkout.html',context)
+
+def order_complete(request):
+    Cart.objects.filter(userid=request.session['id']).update(payment_status=True)
+    return render(request,'user/order_complete.html')
 
 # def apply_cart(request):
 #     if request.method == 'POST':

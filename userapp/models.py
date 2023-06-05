@@ -24,6 +24,14 @@ class Cart(models.Model):
     restid=models.ForeignKey(restreg, on_delete=models.CASCADE,null=True,blank=True)
     quantity=models.PositiveIntegerField(default=1)
     created_at=models.DateTimeField(default=timezone.now)
+    payment_status=models.BooleanField(default=False)
     
+
+class Order(models.Model):
+    userid=models.ForeignKey(userreg, on_delete=models.CASCADE,null=True,blank=True)
+    cartid=models.ManyToManyField(Cart,null=True,blank=True)
+    orderid=models.IntegerField(null=True,blank=True)
+    status=models.BooleanField(default=True)
+
    
 
