@@ -3,156 +3,156 @@
 {% load static %}
 <!-- Mirrored from askbootstrap.com/preview/swiggiweb-v1-1/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Apr 2023 06:35:31 GMT -->
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Askbootstrap">
-<meta name="author" content="Askbootstrap">
-<link rel="icon" type="image/png" href="img/fav.png">
-<title>Swiggiweb - Online Food Ordering Website Template</title>
-
-<link href="{% static 'vendor/slick/slick/slick.css'%}" rel="stylesheet" type="text/css">
-<link href="{% static 'vendor/slick/slick/slick-theme.css'%}" rel="stylesheet" type="text/css">
-
-<link href="{% static 'vendor/icons/feather.css'%}" rel="stylesheet" type="text/css">
-
-<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
-
-<link href="{% static 'css/style.css'%}" rel="stylesheet">
-
-<link href="{% static 'vendor/sidebar/demo.css'%}" rel="stylesheet">
-</head>
-<body class="fixed-bottom-bar">
-<header class="section-header">
-<section class="header-main shadow-sm bg-white">
-<div class="container">
-<div class="row align-items-center">
-<div class="col-1">
-<a href="home.html" class="brand-wrap mb-0">
-<img alt="#" class="img-fluid" src="{% static 'img/logo_web.png'%}">
-</a>
-
-</div>
-<div class="col-3 d-flex align-items-center m-none">
-<div class="dropdown me-3">
-<a class="text-dark dropdown-toggle d-flex align-items-center py-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<div><i class="feather-map-pin me-2 bg-light rounded-pill p-2 icofont-size"></i></div>
-<div>
-<p class="text-muted mb-0 small">Select Location</p>
-Jawaddi Ludhiana...
-</div>
-</a>
-<div class="dropdown-menu p-0 drop-loc">
-<div class="osahan-country">
-<div class="search_location bg-primary p-3 text-end">
-<div class="input-group bg-white rounded shadow-sm">
-<span class="input-group-text bg-transparent border-0 rounded-0"><i class="feather-search"></i></span>
-<input type="text" class="form-control bg-transparent border-0 rounded-0 px-0 shadow-none" placeholder="Enter Your Location" aria-label="Enter Your Location">
-</div>
-</div>
-<div class="p-3 border-bottom">
-<a href="home.html" class="text-decoration-none">
-<p class="fw-bold text-primary m-0"><i class="feather-navigation"></i> New
-York, USA</p>
-</a>
-</div>
-<div class="filter">
-<h6 class="p-3 bg-light m-0 border-bottom">Choose your country</h6>
-<div class="border-bottom p-3">
-<div class="form-check form-check-reverse m-0">
-<input type="radio" id="customRadio1" name="location" class="form-check-input">
-<label class="form-check-label text-start w-100" for="customRadio1">Afghanistan</label>
-</div>
-</div>
-<div class="border-bottom p-3">
-<div class="form-check form-check-reverse m-0">
-<input type="radio" id="customRadio2" name="location" class="form-check-input" checked="">
-<label class="form-check-label text-start w-100" for="customRadio2">India</label>
-</div>
-</div>
-<div class="border-bottom p-3">
-<div class="form-check form-check-reverse m-0">
-<input type="radio" id="customRadio3" name="location" class="form-check-input">
-<label class="form-check-label text-start w-100" for="customRadio3">USA</label>
-</div>
-</div>
-<div class="border-bottom p-3">
-<div class="form-check form-check-reverse m-0">
-<input type="radio" id="customRadio4" name="location" class="form-check-input">
-<label class="form-check-label text-start w-100" for="customRadio4">Australia</label>
-</div>
-</div>
-<div class="border-bottom p-3">
-<div class="form-check form-check-reverse m-0">
-<input type="radio" id="customRadio5" name="location" class="form-check-input">
-<label class="form-check-label text-start w-100" for="customRadio5">Japan</label>
-</div>
-</div>
-<div class="p-3">
-<div class="form-check form-check-reverse m-0">
-<input type="radio" id="customRadio6" name="location" class="form-check-input">
-<label class="form-check-label text-start w-100" for="customRadio6">China</label>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-8">
-<div class="d-flex align-items-center justify-content-end pe-5">
-
-<a href="search.html" class="widget-header me-4 text-dark">
-<div class="icon d-flex align-items-center">
-<i class="feather-search h6 me-2 mb-0"></i> <span>Search</span>
- </div>
-</a>
-
-<a href="offers.html" class="widget-header me-4 text-white btn bg-primary m-none">
-<div class="icon d-flex align-items-center">
-<i class="feather-disc h6 me-2 mb-0"></i> <span>Offers</span>
-</div>
-</a>
-
-<a href="login.html" class="widget-header me-4 text-dark m-none">
-<div class="icon d-flex align-items-center">
-<i class="feather-user h6 me-2 mb-0"></i> <span>Sign in</span>
-</div>
-</a>
-
-<div class="dropdown me-4 m-none">
-<a href="#" class="dropdown-toggle text-dark py-3 d-block" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<img alt="#" src="{% static 'img/user/1.jpg'%}" class="img-fluid rounded-circle header-user me-2 header-user"> Hi Osahan
-</a>
-<div class="dropdown-menu dropdown-menu-right">
-<a class="dropdown-item" href="profile.html">My account</a>
-<a class="dropdown-item" href="faq.html">Delivery support</a>
-<a class="dropdown-item" href="contact-us.html">Contant us</a>
-<a class="dropdown-item" href="terms.html">Term of use</a>
-<a class="dropdown-item" href="privacy.html">Privacy policy</a>
-<a class="dropdown-item" href="login.html">Logout</a>
-</div>
-</div>
-
-<a href="checkout.html" class="widget-header me-4 text-dark">
-<div class="icon d-flex align-items-center">
-<i class="feather-shopping-cart h6 me-2 mb-0"></i> <span>Cart</span>
-</div>
-</a>
-<a class="toggle" href="#">
-<span></span>
-</a>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-</header>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Askbootstrap">
+    <meta name="author" content="Askbootstrap">
+    <link rel="icon" type="image/png" href="img/fav.png">
+    <title>Swiggiweb - Online Food Ordering Website Template</title>
+    
+    <link href="{% static 'vendor/slick/slick/slick.css'%}" rel="stylesheet" type="text/css">
+    <link href="{% static 'vendor/slick/slick/slick-theme.css'%}" rel="stylesheet" type="text/css">
+    
+    <link href="{% static 'vendor/icons/feather.css'%}" rel="stylesheet" type="text/css">
+    
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    
+    <link href="{% static 'vendor/sidebar/demo.css'%}" rel="stylesheet">
+    </head>
+    <body class="fixed-bottom-bar">
+    <header class="section-header">
+    <section class="header-main shadow-sm bg-white">
+    <div class="container">
+    <div class="row align-items-center">
+    <div class="col-1">
+    <a href="home.html" class="brand-wrap mb-0">
+    <img alt="#" class="img-fluid" src="{% static 'img/logo_web.png'%}">
+    </a>
+    
+    </div>
+    <div class="col-3 d-flex align-items-center m-none">
+    <div class="dropdown me-3">
+    <a class="text-dark dropdown-toggle d-flex align-items-center py-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div><i class="feather-map-pin me-2 bg-light rounded-pill p-2 icofont-size"></i></div>
+    <div>
+    <p class="text-muted mb-0 small">Select Location</p>
+    Jawaddi Ludhiana...
+    </div>
+    </a>
+    <div class="dropdown-menu p-0 drop-loc">
+    <div class="osahan-country">
+    <div class="search_location bg-primary p-3 text-end">
+    <div class="input-group bg-white rounded shadow-sm">
+    <span class="input-group-text bg-transparent border-0 rounded-0"><i class="feather-search"></i></span>
+    <input type="text" class="form-control bg-transparent border-0 rounded-0 px-0 shadow-none" placeholder="Enter Your Location" aria-label="Enter Your Location">
+    </div>
+    </div>
+    <div class="p-3 border-bottom">
+    <a href="home.html" class="text-decoration-none">
+    <p class="fw-bold text-primary m-0"><i class="feather-navigation"></i> New
+    York, USA</p>
+    </a>
+    </div>
+    <div class="filter">
+    <h6 class="p-3 bg-light m-0 border-bottom">Choose your country</h6>
+    <div class="border-bottom p-3">
+    <div class="form-check form-check-reverse m-0">
+    <input type="radio" id="customRadio1" name="location" class="form-check-input">
+    <label class="form-check-label text-start w-100" for="customRadio1">Afghanistan</label>
+    </div>
+    </div>
+    <div class="border-bottom p-3">
+    <div class="form-check form-check-reverse m-0">
+    <input type="radio" id="customRadio2" name="location" class="form-check-input" checked="">
+    <label class="form-check-label text-start w-100" for="customRadio2">India</label>
+    </div>
+    </div>
+    <div class="border-bottom p-3">
+    <div class="form-check form-check-reverse m-0">
+    <input type="radio" id="customRadio3" name="location" class="form-check-input">
+    <label class="form-check-label text-start w-100" for="customRadio3">USA</label>
+    </div>
+    </div>
+    <div class="border-bottom p-3">
+    <div class="form-check form-check-reverse m-0">
+    <input type="radio" id="customRadio4" name="location" class="form-check-input">
+    <label class="form-check-label text-start w-100" for="customRadio4">Australia</label>
+    </div>
+    </div>
+    <div class="border-bottom p-3">
+    <div class="form-check form-check-reverse m-0">
+    <input type="radio" id="customRadio5" name="location" class="form-check-input">
+    <label class="form-check-label text-start w-100" for="customRadio5">Japan</label>
+    </div>
+    </div>
+    <div class="p-3">
+    <div class="form-check form-check-reverse m-0">
+    <input type="radio" id="customRadio6" name="location" class="form-check-input">
+    <label class="form-check-label text-start w-100" for="customRadio6">China</label>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="col-8">
+    <div class="d-flex align-items-center justify-content-end pe-5">
+    
+    <a href="search.html" class="widget-header me-4 text-dark">
+    <div class="icon d-flex align-items-center">
+    <i class="feather-search h6 me-2 mb-0"></i> <span>Search</span>
+     </div>
+    </a>
+    
+    <a href="offers.html" class="widget-header me-4 text-white btn bg-primary m-none">
+    <div class="icon d-flex align-items-center">
+    <i class="feather-disc h6 me-2 mb-0"></i> <span>Offers</span>
+    </div>
+    </a>
+    
+    <a href="login.html" class="widget-header me-4 text-dark m-none">
+    <div class="icon d-flex align-items-center">
+    <i class="feather-user h6 me-2 mb-0"></i> <span>Sign in</span>
+    </div>
+    </a>
+    
+    <div class="dropdown me-4 m-none">
+    <a href="#" class="dropdown-toggle text-dark py-3 d-block" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img alt="#" src="{% static 'img/user/1.jpg'%}" class="img-fluid rounded-circle header-user me-2 header-user"> Hi Osahan
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item" href="profile.html">My account</a>
+    <a class="dropdown-item" href="faq.html">Delivery support</a>
+    <a class="dropdown-item" href="contact-us.html">Contant us</a>
+    <a class="dropdown-item" href="terms.html">Term of use</a>
+    <a class="dropdown-item" href="privacy.html">Privacy policy</a>
+    <a class="dropdown-item" href="login.html">Logout</a>
+    </div>
+    </div>
+    
+    <a href="checkout.html" class="widget-header me-4 text-dark">
+    <div class="icon d-flex align-items-center">
+    <i class="feather-shopping-cart h6 me-2 mb-0"></i> <span>Cart</span>
+    </div>
+    </a>
+    <a class="toggle" href="#">
+    <span></span>
+    </a>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </section>
+    
+    </header>
 <div class="osahan-checkout">
 <div class="d-none">
 <div class="bg-primary border-bottom p-3 d-flex align-items-center">
@@ -170,219 +170,134 @@ York, USA</p>
 <div class="d-flex flex-column">
 <h6 class="mb-3 fw-bold">Delivery Address</h6>
 <div class="row g-4 mb-3">
+
+{% for add in address %}
+{% if add.location != default_if_none %}
+
 <div class="col-lg-6">
 <div class="form-check position-relative border-custom-radio p-0">
-<input type="radio" id="customRadioInline1" name="customRadioInline1" class="form-check-input" checked>
+<form method="post" action="order_complete">
+    {% csrf_token %}
+<input type="radio" id="customRadioInline1" name="adr" value="{{add.id}}" class="form-check-input" checked>
+</form>
 <label class="form-check-label w-100 border rounded" for="customRadioInline1"></label>
 <div>
 <div class="p-3 bg-white rounded rounded-bottom-0 shadow-sm w-100">
 <div class="d-flex align-items-center mb-2">
-<h6 class="mb-0">Home</h6>
+<h6 class="mb-0">{{add.addname|capfirst}}</h6>
 <p class="mb-0 badge text-bg-success ms-auto"><i class="icofont-check-circled"></i> Default</p>
 </div>
-<p class="small text-muted m-0">1001 Veterans Blvd</p>
-<p class="small text-muted m-0">Redwood City, CA 94063</p>
+<p class="small text-muted m-0">{{add.location|capfirst}}</p>
+<p class="small text-muted m-0">{{add.fulladdress|capfirst}}</p>
+<p class="small text-muted m-0">{{add.landmark|capfirst}},{{add.pin}}</p>
 </div>
-<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-light border-top w-100 rounded-top-0">Edit</a>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="form-check position-relative border-custom-radio p-0">
-<input type="radio" id="customRadioInline2" name="customRadioInline1" class="form-check-input">
-<label class="form-check-label w-100 border rounded" for="customRadioInline2"></label>
-<div>
-<div class="p-3 rounded rounded-bottom-0 bg-white shadow-sm w-100">
-<div class="d-flex align-items-center mb-2">
-<h6 class="mb-0">Work</h6>
-<p class="mb-0 badge text-bg-light ms-auto"><i class="icofont-check-circled"></i> Select</p>
-</div>
-<p class="small text-muted m-0">Model Town, Ludhiana</p>
-<p class="small text-muted m-0">Punjab 141002, India</p>
-</div>
-<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-light border-top w-100 rounded-top-0">Edit</a>
+
+<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2{{add.id}}" class="btn btn-light border-top w-100 rounded-top-0">Edit</a>
 </div>
 </div>
 </div>
+{% endif %}
+
+<!--**********************************modal2********************************-->
+<div class="modal fade" id="exampleModal2{{add.id}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title">Edit Delivery Address {{add.id}}</h5>
+
+    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+    <form method="post" action="useraddress">
+        {% csrf_token %}
+    <div class="form-row">
+    <div class="col-md-12 form-group">
+    <label class="form-label">Delivery Area</label>
+    <div class="input-group mb-3">
+    <input  type="text" name="location" class="form-control" >
+    <button class="btn btn-outline-secondary" type="button"><i class="feather-map-pin"></i></button>
+    </div>
+    </div>
+    <div class="col-md-12 form-group mb-3"><label class="form-label">Complete Address</label><input placeholder="Complete Address e.g. house number, street name, landmark" type="text" name="fulladdress" class="form-control"></div>
+    <div class="col-md-12 form-group mb-3"><label class="form-label">Delivery
+    Instructions</label><input placeholder="Delivery Instructions e.g. Opposite Gold Souk Mall" type="text" name="landmark" class="form-control"></div>
+    <div class="mb-0 col-md-12 form-group">
+    <label class="form-label">Nickname</label>
+    <div class="input-group mb-3">
+    <input placeholder="e.g. Home, Work etc" type="text" name="addname" class="form-control">
+    </div>
+    </div>
+    <div class="mb-0 col-md-12 form-group">
+        <label class="form-label">Pin Code</label>
+        <div class="input-group mb-3">
+        <input placeholder="zip code" type="text" name="upin" class="form-control">
+        </div>
+        </div>
+    </div>
+    
+    </div>
+    <div class="modal-footer p-0 border-0">
+    <div class="col-6 m-0 p-0">
+    <button type="button" class="btn border-top btn-lg w-100" data-bs-dismiss="modal">Close</button>
+    </div>
+    <div class="col-6 m-0 p-0">
+    <button type="submit" class="btn btn-primary btn-lg w-100">Save</button>
+    </form>
+    </div>
+     </div>
+    </div>
+    </div>
+    </div>
+<!--************************************modal2 ends*************************************-->
+
+{% endfor %}
+
 </div>
-<a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"> ADD NEW ADDRESS </a>
-</div>
-</div>
-</div>
-<div class="accordion mb-3 rounded shadow-sm bg-white overflow-hidden" id="accordionExample">
-<div class="osahan-card bg-white border-bottom overflow-hidden">
-<div class="osahan-card-header" id="headingOne">
-<h2 class="mb-0">
-<button class="d-flex p-3 align-items-center btn btn-link w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-<i class="feather-credit-card me-3"></i> Credit/Debit Card
-<i class="feather-chevron-down ms-auto"></i>
-</button>
-</h2>
-</div>
-<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-<div class="osahan-card-body border-top p-3">
-<h6 class="m-0">Add new card</h6>
-<p class="small">WE ACCEPT <span class="osahan-card ms-2 fw-bold">( Master Card
-/ Visa Card / Rupay )</span></p>
-<form>
-<div class="form-row">
-<div class="col-md-12 form-group mb-3">
-<label class="form-label fw-bold small">Card number</label>
-<div class="input-group">
-<input placeholder="Card number" type="number" class="form-control">
-<button class="btn btn-outline-secondary" type="button"><i class="feather-credit-card"></i></button>
-</div>
-</div>
-<div class="row mb-3">
-<div class="col-md-8 form-group"><label class="form-label fw-bold small">Valid
-through(MM/YY)</label><input placeholder="Enter Valid through(MM/YY)" type="number" class="form-control"></div>
-<div class="col-md-4 form-group"><label class="form-label fw-bold small">CVV</label><input placeholder="Enter CVV Number" type="number" class="form-control"></div>
-</div>
-<div class="col-md-12 form-group mb-3"><label class="form-label fw-bold small">Name on card</label><input placeholder="Enter Card number" type="text" class="form-control"></div>
-<div class="col-md-12 form-group mb-0">
-<div class="form-check custom-checkbox">
-<input class="form-check-input" type="checkbox" value="" id="custom-Check1">
- <label class="form-check-label small" for="custom-Check1">
-Securely save this card
-for a faster checkout next time.
-</label>
-</div>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-<div class="osahan-card bg-white border-bottom overflow-hidden">
-<div class="osahan-card-header" id="headingTwo">
-<h2 class="mb-0">
-<button class="d-flex p-3 align-items-center btn btn-link w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-<i class="feather-globe me-3"></i> Net Banking
-<i class="feather-chevron-down ms-auto"></i>
-</button>
-</h2>
-</div>
-<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-<div class="osahan-card-body border-top p-3">
-<form>
-<div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
-<input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>
-<label class="btn btn-outline-secondary" for="btnradio1">HDFC</label>
-<input type="radio" class="btn-check" name="btnradio" id="btnradio2">
-<label class="btn btn-outline-secondary" for="btnradio2">ICICI</label>
-<input type="radio" class="btn-check" name="btnradio" id="btnradio3">
-<label class="btn btn-outline-secondary" for="btnradio3">AXIS</label>
-</div>
-<hr>
-<div class="form-row">
-<div class="col-md-12 form-group mb-0">
-<label class="form-label small fw-bold">Select Bank</label><br>
-<select class="custom-select form-control">
-<option>Bank</option>
-<option>KOTAK</option>
-<option>SBI</option>
-<option>UCO</option>
-</select>
-</div>
-</div>
-</form>
+<a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1"> ADD NEW ADDRESS </a>
 </div>
 </div>
 </div>
-<div class="osahan-card bg-white overflow-hidden">
-<div class="osahan-card-header" id="headingThree">
-<h2 class="mb-0">
-<button class="d-flex p-3 align-items-center btn btn-link w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-<i class="feather-dollar-sign me-3"></i> Cash on Delivery
-<i class="feather-chevron-down ms-auto"></i>
-</button>
-</h2>
-</div>
-<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-<div class="card-body border-top p-3">
-<h6 class="mb-3 mt-0 fw-bold">Cash</h6>
-<p class="m-0">Please keep exact change handy to help us serve you better</p>
+
+
+
+
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
+<!--***************************cart*********************************-->
 <div class="col-md-4">
 <div class="osahan-cart-item rounded rounded shadow-sm overflow-hidden bg-white sticky_sidebar">
 <div class="d-flex border-bottom osahan-cart-item-profile bg-white p-3">
 <img alt="osahan" src="{% static 'img/starter1.jpg'%}" class="me-3 rounded-circle img-fluid">
 <div class="d-flex flex-column">
-<h6 class="mb-1 fw-bold">Spice Hut Indian Restaurant</h6>
-<p class="mb-0 small text-muted"><i class="feather-map-pin"></i> 2036 2ND AVE, NEW YORK,
-NY 10029</p>
+<h6 class="mb-1 fw-bold">In Your Cart</h6>
+<p class="mb-0 small text-muted">{{crt.count}} ITEMS</p>
 </div>
 </div>
+{% for cart in crt %}
 <div class="bg-white border-bottom py-2">
 <div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
 <div class="d-flex align-items-center">
 <div class="me-2 text-danger">&middot;</div>
 <div class="media-body">
-<p class="m-0">Chicken Tikka Sub</p>
+<p class="m-0">{{cart.menuid.iname|capfirst}}</p>
 </div>
 </div>
 <div class="d-flex align-items-center">
-<span class="count-number float-end"><button type="button" class="btn-sm left dec btn btn-outline-secondary"> <i class="feather-minus"></i> </button><input class="count-number-input" type="text" readonly="" value="2"><button type="button" class="btn-sm right inc btn btn-outline-secondary"> <i class="feather-plus"></i> </button></span>
-<p class="text-gray mb-0 float-end ms-2 text-muted small">$628</p>
+<span class="count-number float-end">
+    <a href="{% url 'decrement_quantit' cart.id %}" class="btn-sm left dec btn btn-outline-secondary"> 
+        <i class="feather-minus"></i> 
+    </a>
+    <input class="count-number-input" type="text" readonly="" value="{{cart.quantity}}">
+    <a href="{% url 'increment_quantit' cart.id %}" class="btn-sm right inc btn btn-outline-secondary">
+         <i class="feather-plus"></i> </a>
+        
+        </span>
+<p class="text-gray mb-0 float-end ms-2 text-muted small">Rs {{cart.menuid.iprice}}</p>
 </div>
 </div>
-<div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
-<div class="d-flex align-items-center">
-<div class="me-2 text-danger">&middot;</div>
-<div class="media-body">
-<p class="m-0">Methi Chicken Dry
- </p>
+
 </div>
-</div>
-<div class="d-flex align-items-center">
-<span class="count-number float-end"><button type="button" class="btn-sm left dec btn btn-outline-secondary"> <i class="feather-minus"></i> </button><input class="count-number-input" type="text" readonly="" value="2"><button type="button" class="btn-sm right inc btn btn-outline-secondary"> <i class="feather-plus"></i> </button></span>
-<p class="text-gray mb-0 float-end ms-2 text-muted small">$628</p>
-</div>
-</div>
-<div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
-<div class="d-flex align-items-center">
-<div class="me-2 text-danger">&middot;</div>
-<div class="media-body">
-<p class="m-0">Reshmi Kebab
-</p>
-</div>
-</div>
-<div class="d-flex align-items-center">
-<span class="count-number float-end"><button type="button" class="btn-sm left dec btn btn-outline-secondary"> <i class="feather-minus"></i> </button><input class="count-number-input" type="text" readonly="" value="2"><button type="button" class="btn-sm right inc btn btn-outline-secondary"> <i class="feather-plus"></i> </button></span>
-<p class="text-gray mb-0 float-end ms-2 text-muted small">$628</p>
-</div>
-</div>
-<div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
-<div class="d-flex align-items-center">
-<div class="me-2 text-success">&middot;</div>
-<div class="media-body">
-<p class="m-0">Lemon Cheese Dry
-</p>
-</div>
-</div>
-<div class="d-flex align-items-center">
-<span class="count-number float-end"><button type="button" class="btn-sm left dec btn btn-outline-secondary"> <i class="feather-minus"></i> </button><input class="count-number-input" type="text" readonly="" value="2"><button type="button" class="btn-sm right inc btn btn-outline-secondary"> <i class="feather-plus"></i> </button></span>
-<p class="text-gray mb-0 float-end ms-2 text-muted small">$628</p>
-</div>
-</div>
-<div class="gold-members d-flex align-items-center justify-content-between px-3 py-2">
-<div class="d-flex align-items-center">
-<div class="me-2 text-success">&middot;</div>
-<div class="media-body">
-<p class="m-0">Rara Paneer</p>
-</div>
-</div>
-<div class="d-flex align-items-center">
-<span class="count-number float-end"><button type="button" class="btn-sm left dec btn btn-outline-secondary"> <i class="feather-minus"></i> </button><input class="count-number-input" type="text" readonly="" value="2"><button type="button" class="btn-sm right inc btn btn-outline-secondary"> <i class="feather-plus"></i> </button></span>
-<p class="text-gray mb-0 float-end ms-2 text-muted small">$628</p>
-</div>
-</div>
-</div>
+{% endfor %}
 <div class="bg-white p-3 py-3 border-bottom clearfix">
 <div class="input-group input-group-sm mb-2">
 <input placeholder="Enter promo code" type="text" class="form-control">
@@ -394,13 +309,13 @@ NY 10029</p>
 </div>
 </div>
 <div class="bg-white p-3 clearfix border-bottom">
-<p class="mb-1">Item Total <span class="float-end text-dark">$3140</span></p>
-<p class="mb-1">Restaurant Charges <span class="float-end text-dark">$62.8</span></p>
-<p class="mb-1">Delivery Fee<span class="text-info ms-1"><i class="feather-info"></i></span><span class="float-end text-dark">$10</span>
+<p class="mb-1">Item Total <span class="float-end text-dark">Rs {{total}}</span></p>
+
+<p class="mb-1">Delivery Fee<span class="text-info ms-1"><i class="feather-info"></i></span><span class="float-end text-dark">Rs {{delcharge}}  </span>
 </p>
-<p class="mb-1 text-success">Total Discount<span class="float-end text-success">$1884</span></p>
+<p class="mb-1 text-success">Total amount<span class="float-end text-success">Rs {{ total|add:delcharge }}</span></p>
 <hr>
-<h6 class="fw-bold mb-0">TO PAY <span class="float-end">INR {{ total|add:delcharge }}</span></h6>
+<h6 class="fw-bold mb-0">TO PAY <span class="float-end">Rs{{ total|add:delcharge }}</span></h6>
 </div>
 <div class="p-3">
 
@@ -429,7 +344,7 @@ NY 10029</p>
                         "email": "gaurav.kumar@example.com",
                         "contact": "9999999999"
                     },
-                    "notes": {
+                    "notes": {  
                         "address": "Razorpay Corporate Office"
                     },
                     "theme": {
@@ -462,6 +377,9 @@ NY 10029</p>
 </div>
 </div>
 </div>
+
+
+
 
 <footer class="section-footer border-top bg-dark">
 <div class="container">
@@ -521,6 +439,15 @@ computer commercials in which a youth reports.</p>
 </div>
 
 </div>
+
+
+
+
+
+
+
+
+
 
 <section class="footer-center border-top padding-y py-5">
 <h6 class="title text-white">Countries</h6>
@@ -691,8 +618,8 @@ Help
 </li>
 </ul>
 </nav>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+<!---****************moodal*****************-->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered">
 <div class="modal-content">
 <div class="modal-header">
@@ -700,43 +627,52 @@ Help
 <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body">
-<form class="">
+<form method="post" action="useraddress">
+    {% csrf_token %}
 <div class="form-row">
 <div class="col-md-12 form-group">
 <label class="form-label">Delivery Area</label>
 <div class="input-group mb-3">
-<input placeholder="Delivery Area" type="text" class="form-control">
+<input placeholder="Delivery Area" type="text" name="location" class="form-control">
 <button class="btn btn-outline-secondary" type="button"><i class="feather-map-pin"></i></button>
 </div>
 </div>
-<div class="col-md-12 form-group mb-3"><label class="form-label">Complete Address</label><input placeholder="Complete Address e.g. house number, street name, landmark" type="text" class="form-control"></div>
+<div class="col-md-12 form-group mb-3"><label class="form-label">Complete Address</label><input placeholder="Complete Address e.g. house number, street name, landmark" type="text" name="fulladdress" class="form-control"></div>
 <div class="col-md-12 form-group mb-3"><label class="form-label">Delivery
-Instructions</label><input placeholder="Delivery Instructions e.g. Opposite Gold Souk Mall" type="text" class="form-control"></div>
+Instructions</label><input placeholder="Delivery Instructions e.g. Opposite Gold Souk Mall" name="landmark" type="text" class="form-control"></div>
 <div class="mb-0 col-md-12 form-group">
 <label class="form-label">Nickname</label>
-<div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
-<input type="radio" class="btn-check" name="btnradio" id="btnradio4" checked>
-<label class="btn btn-outline-secondary" for="btnradio4">Home</label>
-<input type="radio" class="btn-check" name="btnradio" id="btnradio5">
-<label class="btn btn-outline-secondary" for="btnradio5">Work</label>
-<input type="radio" class="btn-check" name="btnradio" id="btnradio6">
-<label class="btn btn-outline-secondary" for="btnradio6">Other</label>
-</div>
-</div>
-</div>
-</form>
+<div class="input-group mb-3">
+    <input placeholder="e.g. Home, Work etc" type="text" name="addname" class="form-control">
+    </div>
+    </div>
+    <div class="mb-0 col-md-12 form-group">
+        <label class="form-label">Pin Code</label>
+        <div class="input-group mb-3">
+        <input placeholder="zip code" type="text" name="upin" class="form-control">
+        </div>
+        </div>
+    </div>
+
 </div>
 <div class="modal-footer p-0 border-0">
 <div class="col-6 m-0 p-0">
 <button type="button" class="btn border-top btn-lg w-100" data-bs-dismiss="modal">Close</button>
 </div>
 <div class="col-6 m-0 p-0">
-<button type="button" class="btn btn-primary btn-lg w-100">Save changes</button>
+<button type="submit" class="btn btn-primary btn-lg w-100">Save changes</button>
+</form>
 </div>
  </div>
 </div>
 </div>
 </div>
+
+
+
+
+
+
 <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
 <div class="row">
 <div class="col selected">
@@ -773,16 +709,19 @@ Profile
 </div>
 </div>
 
-<script type="b5914b23d966224f9e4f7e40-text/javascript" src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
-<script type="b5914b23d966224f9e4f7e40-text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.'%}"></script>
 
-<script type="b5914b23d966224f9e4f7e40-text/javascript" src="{% static 'vendor/slick/slick/slick.min.js'%}"></script>
 
-<script type="b5914b23d966224f9e4f7e40-text/javascript" src="{% static 'vendor/sidebar/hc-offcanvas-nav.js'%}"></script>
+<script type="9f90295ef81532c9b0cd7e68-text/javascript" src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+<script type="9f90295ef81532c9b0cd7e68-text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
 
-<script type="b5914b23d966224f9e4f7e40-text/javascript" src="{% static 'js/osahan.js'%}"></script>
-<script src="../../cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="b5914b23d966224f9e4f7e40-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7bcc523009178578","version":"2023.3.0","r":1,"b":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
+<script type="9f90295ef81532c9b0cd7e68-text/javascript" src="{% static 'vendor/slick/slick/slick.min.js'%}"></script>
+
+<script type="9f90295ef81532c9b0cd7e68-text/javascript" src="{% static 'vendor/sidebar/hc-offcanvas-nav.js'%}"></script>
+
+<script type="9f90295ef81532c9b0cd7e68-text/javascript" src="{% static 'js/osahan.js'%}"></script>
+<script src="https://askbootstrap.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="9f90295ef81532c9b0cd7e68-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7bcc525368188578","version":"2023.3.0","r":1,"b":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
 </body>
+
 
 <!-- Mirrored from askbootstrap.com/preview/swiggiweb-v1-1/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Apr 2023 06:35:31 GMT -->
 </html>

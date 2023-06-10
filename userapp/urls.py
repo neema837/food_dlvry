@@ -11,6 +11,9 @@ urlpatterns=[
     path('decrement_quantity<int:cart_id>',views.decrement_quantity,name="decrement_quantity"),
     path('checkout',views.checkout,name="checkout"),
     path('order_complete',views.order_complete,name="order_complete"),
+    path('increment_quantit<int:cart_id>',views.increment_quantit,name="increment_quantit"),
+    path('decrement_quantit<int:cart_id>',views.decrement_quantit,name="decrement_quantit"),
+    path('useraddress',views.useraddress,name="useraddress"),
 
     
 ]

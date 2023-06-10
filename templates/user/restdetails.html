@@ -4,155 +4,155 @@
 
 <!-- Mirrored from askbootstrap.com/preview/swiggiweb-v1-1/restaurant.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Apr 2023 06:35:33 GMT -->
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Askbootstrap">
-<meta name="author" content="Askbootstrap">
-<link rel="icon" type="image/png" href="img/fav.png'%}">
-<title>Swiggiweb - Online Food Ordering Website Template</title>
-
-<link href="{% static 'vendor/slick/slick/slick.css'%}" rel="stylesheet" type="text/css">
-<link href="{% static 'vendor/slick/slick/slick-theme.css'%}" rel="stylesheet" type="text/css">
-
-<link href="{% static 'vendor/icons/feather.css'%}" rel="stylesheet" type="text/css">
-
-<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
-
-<link href="{% static 'css/style.css'%}" rel="stylesheet">
-
-<link href="{% static 'vendor/sidebar/demo.css'%}" rel="stylesheet">
-</head>
-<body class="fixed-bottom-bar">
-<header class="section-header">
-<section class="header-main shadow-sm bg-white">
-<div class="container">
-<div class="row align-items-center">
-<div class="col-1">
-<a href="home.html" class="brand-wrap mb-0">
-<img alt="#" class="img-fluid"  src="{% static 'img/logo_web.png'%}">
-</a>
-
-</div>
-<div class="col-3 d-flex align-items-center m-none">
-<div class="dropdown me-3">
-<a class="text-dark dropdown-toggle d-flex align-items-center py-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<div><i class="feather-map-pin me-2 bg-light rounded-pill p-2 icofont-size"></i></div>
-<div>
-<p class="text-muted mb-0 small">Select Location</p>
-Jawaddi Ludhiana...
-</div>
-</a>
-<div class="dropdown-menu p-0 drop-loc">
-<div class="osahan-country">
-<div class="search_location bg-primary p-3 text-end">
-<div class="input-group bg-white rounded shadow-sm">
-<span class="input-group-text bg-transparent border-0 rounded-0"><i class="feather-search"></i></span>
-<input type="text" class="form-control bg-transparent border-0 rounded-0 px-0 shadow-none" placeholder="Enter Your Location" aria-label="Enter Your Location">
-</div>
-</div>
-<div class="p-3 border-bottom">
-<a href="home.html" class="text-decoration-none">
-<p class="fw-bold text-primary m-0"><i class="feather-navigation"></i> New York, USA</p>
-</a>
-</div>
-<div class="filter">
-<h6 class="p-3 bg-light m-0 border-bottom">Choose your country</h6>
-<div class="border-bottom p-3">
-<div class="form-check form-check-reverse m-0">
-<input type="radio" id="customRadio1" name="location" class="form-check-input">
- <label class="form-check-label text-start w-100" for="customRadio1">Afghanistan</label>
-</div>
-</div>
-<div class="border-bottom p-3">
-<div class="form-check form-check-reverse m-0">
-<input type="radio" id="customRadio2" name="location" class="form-check-input" checked="">
-<label class="form-check-label text-start w-100" for="customRadio2">India</label>
-</div>
-</div>
-<div class="border-bottom p-3">
-<div class="form-check form-check-reverse m-0">
-<input type="radio" id="customRadio3" name="location" class="form-check-input">
-<label class="form-check-label text-start w-100" for="customRadio3">USA</label>
-</div>
-</div>
-<div class="border-bottom p-3">
-<div class="form-check form-check-reverse m-0">
-<input type="radio" id="customRadio4" name="location" class="form-check-input">
-<label class="form-check-label text-start w-100" for="customRadio4">Australia</label>
-</div>
-</div>
-<div class="border-bottom p-3">
-<div class="form-check form-check-reverse m-0">
-<input type="radio" id="customRadio5" name="location" class="form-check-input">
-<label class="form-check-label text-start w-100" for="customRadio5">Japan</label>
-</div>
-</div>
-<div class="p-3">
-<div class="form-check form-check-reverse m-0">
-<input type="radio" id="customRadio6" name="location" class="form-check-input">
-<label class="form-check-label text-start w-100" for="customRadio6">China</label>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-8">
-<div class="d-flex align-items-center justify-content-end pe-5">
-
-<a href="search.html" class="widget-header me-4 text-dark">
-<div class="icon d-flex align-items-center">
-<i class="feather-search h6 me-2 mb-0"></i> <span>Search</span>
-</div>
-</a>
-
- <a href="offers.html" class="widget-header me-4 text-white btn bg-primary m-none">
-<div class="icon d-flex align-items-center">
-<i class="feather-disc h6 me-2 mb-0"></i> <span>Offers</span>
-</div>
-</a>
-
-<a href="login.html" class="widget-header me-4 text-dark m-none">
-<div class="icon d-flex align-items-center">
-<i class="feather-user h6 me-2 mb-0"></i> <span>Sign in</span>
-</div>
-</a>
-
-<div class="dropdown me-4 m-none">
-<a href="#" class="dropdown-toggle text-dark py-3 d-block" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<img alt="#"  class="img-fluid rounded-circle header-user me-2 header-user"> Hi {{request.session.uname}}
-</a>
-<div class="dropdown-menu dropdown-menu-right">
-<a class="dropdown-item" href="profile.html">My account</a>
-<a class="dropdown-item" href="faq.html">Delivery support</a>
-<a class="dropdown-item" href="contact-us.html">Contant us</a>
-<a class="dropdown-item" href="terms.html">Term of use</a>
-<a class="dropdown-item" href="privacy.html">Privacy policy</a>
-<a class="dropdown-item" href="login.html">Logout</a>
-</div>
-</div>
-
-<a href="checkout.html" class="widget-header me-4 text-dark">
-<div class="icon d-flex align-items-center">
-<i class="feather-shopping-cart h6 me-2 mb-0"></i> <span>Cart</span>
-</div>
-</a>
-<a class="toggle" href="#">
-<span></span>
-</a>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-</header>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Askbootstrap">
+    <meta name="author" content="Askbootstrap">
+    <link rel="icon" type="image/png" href="img/fav.png'%}">
+    <title>Swiggiweb - Online Food Ordering Website Template</title>
+    
+    <link href="{% static 'vendor/slick/slick/slick.css'%}" rel="stylesheet" type="text/css">
+    <link href="{% static 'vendor/slick/slick/slick-theme.css'%}" rel="stylesheet" type="text/css">
+    
+    <link href="{% static 'vendor/icons/feather.css'%}" rel="stylesheet" type="text/css">
+    
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    
+    <link href="{% static 'vendor/sidebar/demo.css'%}" rel="stylesheet">
+    </head>
+    <body class="fixed-bottom-bar">
+    <header class="section-header">
+    <section class="header-main shadow-sm bg-white">
+    <div class="container">
+    <div class="row align-items-center">
+    <div class="col-1">
+    <a href="home.html" class="brand-wrap mb-0">
+    <img alt="#" class="img-fluid"  src="{% static 'img/logo_web.png'%}">
+    </a>
+    
+    </div>
+    <div class="col-3 d-flex align-items-center m-none">
+    <div class="dropdown me-3">
+    <a class="text-dark dropdown-toggle d-flex align-items-center py-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div><i class="feather-map-pin me-2 bg-light rounded-pill p-2 icofont-size"></i></div>
+    <div>
+    <p class="text-muted mb-0 small">Select Location</p>
+    Jawaddi Ludhiana...
+    </div>
+    </a>
+    <div class="dropdown-menu p-0 drop-loc">
+    <div class="osahan-country">
+    <div class="search_location bg-primary p-3 text-end">
+    <div class="input-group bg-white rounded shadow-sm">
+    <span class="input-group-text bg-transparent border-0 rounded-0"><i class="feather-search"></i></span>
+    <input type="text" class="form-control bg-transparent border-0 rounded-0 px-0 shadow-none" placeholder="Enter Your Location" aria-label="Enter Your Location">
+    </div>
+    </div>
+    <div class="p-3 border-bottom">
+    <a href="home.html" class="text-decoration-none">
+    <p class="fw-bold text-primary m-0"><i class="feather-navigation"></i> New York, USA</p>
+    </a>
+    </div>
+    <div class="filter">
+    <h6 class="p-3 bg-light m-0 border-bottom">Choose your country</h6>
+    <div class="border-bottom p-3">
+    <div class="form-check form-check-reverse m-0">
+    <input type="radio" id="customRadio1" name="location" class="form-check-input">
+     <label class="form-check-label text-start w-100" for="customRadio1">Afghanistan</label>
+    </div>
+    </div>
+    <div class="border-bottom p-3">
+    <div class="form-check form-check-reverse m-0">
+    <input type="radio" id="customRadio2" name="location" class="form-check-input" checked="">
+    <label class="form-check-label text-start w-100" for="customRadio2">India</label>
+    </div>
+    </div>
+    <div class="border-bottom p-3">
+    <div class="form-check form-check-reverse m-0">
+    <input type="radio" id="customRadio3" name="location" class="form-check-input">
+    <label class="form-check-label text-start w-100" for="customRadio3">USA</label>
+    </div>
+    </div>
+    <div class="border-bottom p-3">
+    <div class="form-check form-check-reverse m-0">
+    <input type="radio" id="customRadio4" name="location" class="form-check-input">
+    <label class="form-check-label text-start w-100" for="customRadio4">Australia</label>
+    </div>
+    </div>
+    <div class="border-bottom p-3">
+    <div class="form-check form-check-reverse m-0">
+    <input type="radio" id="customRadio5" name="location" class="form-check-input">
+    <label class="form-check-label text-start w-100" for="customRadio5">Japan</label>
+    </div>
+    </div>
+    <div class="p-3">
+    <div class="form-check form-check-reverse m-0">
+    <input type="radio" id="customRadio6" name="location" class="form-check-input">
+    <label class="form-check-label text-start w-100" for="customRadio6">China</label>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="col-8">
+    <div class="d-flex align-items-center justify-content-end pe-5">
+    
+    <a href="search.html" class="widget-header me-4 text-dark">
+    <div class="icon d-flex align-items-center">
+    <i class="feather-search h6 me-2 mb-0"></i> <span>Search</span>
+    </div>
+    </a>
+    
+     <a href="offers.html" class="widget-header me-4 text-white btn bg-primary m-none">
+    <div class="icon d-flex align-items-center">
+    <i class="feather-disc h6 me-2 mb-0"></i> <span>Offers</span>
+    </div>
+    </a>
+    
+    <a href="login.html" class="widget-header me-4 text-dark m-none">
+    <div class="icon d-flex align-items-center">
+    <i class="feather-user h6 me-2 mb-0"></i> <span>Sign in</span>
+    </div>
+    </a>
+    
+    <div class="dropdown me-4 m-none">
+    <a href="#" class="dropdown-toggle text-dark py-3 d-block" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img alt="#"  class="img-fluid rounded-circle header-user me-2 header-user"> Hi {{request.session.uname}}
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item" href="profile.html">My account</a>
+    <a class="dropdown-item" href="faq.html">Delivery support</a>
+    <a class="dropdown-item" href="contact-us.html">Contant us</a>
+    <a class="dropdown-item" href="terms.html">Term of use</a>
+    <a class="dropdown-item" href="privacy.html">Privacy policy</a>
+    <a class="dropdown-item" href="login.html">Logout</a>
+    </div>
+    </div>
+    
+    <a href="checkout.html" class="widget-header me-4 text-dark">
+    <div class="icon d-flex align-items-center">
+    <i class="feather-shopping-cart h6 me-2 mb-0"></i> <span>Cart</span>
+    </div>
+    </a>
+    <a class="toggle" href="#">
+    <span></span>
+    </a>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </section>
+    
+    </header>
 <div class="d-none">
 <div class="bg-primary p-3 d-flex align-items-center">
 <a class="toggle togglew toggle-2" href="#"><span></span></a>
@@ -614,12 +614,12 @@ Jawaddi Ludhiana...
 <p class="mb-1">Item Total <span class="float-end text-dark">Rs {{total}}</span></p>
 <p class="mb-1">Delivery Fee<span class="text-info ms-1"><i class="feather-info"></i></span><span class="float-end text-dark">Rs {{delcharge}}</span></p>
 
-<p class="mb-1 text-success">Total Discount<span class="float-end text-success">$1884</span></p>
+<p class="mb-1 text-success">Total amount<span class="float-end text-success">Rs {{ total|add:delcharge }}</span></p>
 <hr>
-<h6 class="fw-bold mb-0">TO PAY <span class="float-end">INR {{ total|add:delcharge }}  </span></h6>
+<h6 class="fw-bold mb-0">TO PAY <span class="float-end">Rs {{ total|add:delcharge }}  </span></h6>
 </div>
 <div class="p-3">
-<a class="btn btn-success w-100 btn-lg" href="checkout">PAY INR {{ total|add:delcharge }}<i class="feather-arrow-right"></i></a>
+<a class="btn btn-success w-100 btn-lg" href="checkout">PAY<i class="feather-arrow-right"></i></a>
 
 </div>
 </div>

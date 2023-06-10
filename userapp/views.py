@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from .models import*
 from restapp.models import*
 from django.contrib import messages
+import string,random 
+
 from django.urls import reverse
 # Create your views here.
 
@@ -167,13 +169,17 @@ client = razorpay.Client(auth=(RAZORPAY_API_KEY, RAZORPAY_API_SECRET_KEY))
 def checkout(request):
         crt = Cart.objects.filter(userid=request.session['id'])
         price=itotal=total=subtot=0
-
+        uid = request.session['id']
+        address=Checkoutadd.objects.filter(userid=uid)
+        uaddress=userreg.objects.filter(id=uid)
+       
+        
         for i in crt:
           price = i.menuid.iprice * i.quantity
           itotal = itotal + price 
           
         total=itotal
-     
+       
         if total>250 and total<500:
              delcharge=20
         elif total<250:
@@ -193,14 +199,76 @@ def checkout(request):
         payment_order= client.order.create(dict(amount=amt,currency="INR",payment_capture=1))
         payment_order_id= payment_order['id']
         context = {
-            'api_key':api_key,
-            'order_id':payment_order_id,
+                'api_key':api_key,
+                'order_id':payment_order_id,
                 "total" : total,
-                "delcharge" : delcharge, 
+                "delcharge":delcharge, 
+                'crt':crt,
+                'uaddress':uaddress,
+                'address':address,
             }
         return render(request, 'user/checkout.html',context)
 
+
+def increment_quantit(request,cart_id):
+                cart = get_object_or_404(Cart, pk=cart_id)
+                cart.quantity += 1
+                cart.save()
+                print(cart.restid.id)
+                return redirect('checkout') 
+
+ 
+
+def decrement_quantit(request,cart_id):
+
+            cart = get_object_or_404(Cart, pk=cart_id)
+            if cart.quantity == 1:
+                        cart.delete()
+            else:
+                cart.quantity -= 1
+                cart.save()        
+            return redirect('checkout') 
+
+def useraddress(request):
+    uid = request.session['id']
+    userdetails = userreg.objects.get(id=uid)
+    checkadd = Checkoutadd.objects.filter(userid=request.session['id'])
+
+    if request.method=='POST':
+          
+            if 'location' not in checkadd.__dict__ or checkadd.location is None:
+
+                checkout_address = Checkoutadd.objects.create(
+                userid=userdetails,
+                addname=request.POST['addname'],
+                location=request.POST['location'],  # Use the existing location value from userreg model
+                landmark=request.POST['landmark'],
+                fulladdress=request.POST['fulladdress'],
+                pin=request.POST['upin']
+                )
+                checkout_address.save()
+            return redirect('checkout')  # Assuming 'checkout' is the URL name for the checkout page
+    context = {
+                'userdetails': userdetails,
+                'checkadd': checkadd
+            }        
+
+    return render(request, 'user/checkout.html', context)
+                
+                
+          
+
 def order_complete(request):
+    if request.method=="POST":
+        adr=request.POST["adr"]
+        uid = request.session['id']
+        characters = string.digits
+        orderid = ''.join(random.choice(characters) for i in range(8))
+        listcrt=[]
+        cartitems=Cart.objects.filter(userid=uid)
+        for c in cartitems:
+              listcrt.append(c.id)
+       #saveorder=
     Cart.objects.filter(userid=request.session['id']).update(payment_status=True)
     return render(request,'user/order_complete.html')
 
