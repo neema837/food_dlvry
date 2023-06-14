@@ -171,30 +171,46 @@
 <h6 class="mb-3 fw-bold">Delivery Address</h6>
 <div class="row g-4 mb-3">
 
+
+
 {% for add in address %}
 {% if add.location != default_if_none %}
 
 <div class="col-lg-6">
 <div class="form-check position-relative border-custom-radio p-0">
-<form method="post" action="order_complete">
-    {% csrf_token %}
-<input type="radio" id="customRadioInline1" name="adr" value="{{add.id}}" class="form-check-input" checked>
-</form>
-<label class="form-check-label w-100 border rounded" for="customRadioInline1"></label>
+
+<label class="form-check-label w-100 border rounded" for=""></label>
 <div>
 <div class="p-3 bg-white rounded rounded-bottom-0 shadow-sm w-100">
 <div class="d-flex align-items-center mb-2">
 <h6 class="mb-0">{{add.addname|capfirst}}</h6>
-<p class="mb-0 badge text-bg-success ms-auto"><i class="icofont-check-circled"></i> Default</p>
 </div>
 <p class="small text-muted m-0">{{add.location|capfirst}}</p>
 <p class="small text-muted m-0">{{add.fulladdress|capfirst}}</p>
 <p class="small text-muted m-0">{{add.landmark|capfirst}},{{add.pin}}</p>
 </div>
-
 <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2{{add.id}}" class="btn btn-light border-top w-100 rounded-top-0">Edit</a>
 </div>
 </div>
+
+  {% for adr in order_adr %}
+  {% if adr.adrid.id == add.id %}
+  <button  class="mb-0 btn btn-success ms-auto"><i class="icofont-check-circled"></i>Selected Address</button>
+  {% else %}
+    <button type="submit" class="mb-0 btn btn-primary ms-auto"><i class="icofont-check-circled"></i>Change Address</button>
+  {% endif %} 
+
+  {% endfor %}
+
+{% if order_count == 0  %}
+ <form method="post" action="">
+    {% csrf_token %}
+    <input hidden type="text" value="{{add.id}}" name="adr">
+
+ <button type="submit" class="mb-0 btn btn-primary ms-auto"><i class="icofont-check-circled"></i>Deliver Here</button>
+</form>
+{% endif %}
+
 </div>
 {% endif %}
 

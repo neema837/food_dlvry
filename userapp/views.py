@@ -25,6 +25,13 @@ def login(request):
             messages.info(request,'Invalid User')
  return render(request,'user/login.html')
 
+def ulogout(request):
+      del request.session['id']
+      menuall=Menu.objects.all()
+      for m in menuall:
+            Menu.objects.filter(id=m.id).update(cart_status=False)
+      return redirect('index')
+
 def signup(request):
     if request.method=='POST':
         uname=request.POST['uname']
@@ -73,17 +80,45 @@ def restdetails(request,rid):
         crt_item = None
         categories = Category.objects.filter(restid=rid)
         uid = request.session['id']
-        cartitem=Cart.objects.filter(userid_id=uid) 
-       
+        cartitem=Cart.objects.filter(userid_id=uid)
+
+        # crt_id_list = menu_id_list = []
+        # menuitems = Menu.objects.all()
+
+        # for c in cartitem :
+        #       crt_id_list.append(c.menuid.id)
+        # print("crt id:",crt_id_list)
+
+        # for crt in crt_id_list:
+        #     for m in menuitems :
+        #             if crt == m.id :  
+        #                 print("crt :",crt,"mid:",m.id)
+        #                 print(m.cart_status)
+        #                 print(" *** ")
+        #                 break
+        #             else:
+        #                 print("crt :",crt,"mid:",m.id)
+        #                 print(" else *** ")
+ 
+
+
         if request.method == 'POST':
                 userid = request.session['id']
                 menuid = request.POST['menuid']
-                add_times_cart = Cart(userid_id=userid,menuid_id=menuid,restid_id=rid)
-                add_times_cart.save()
+
                 Menu.objects.filter(id=menuid).update(cart_status=True)
+                if Cart.objects.filter(menuid=menuid,userid=userid).exists():
+                      crt = Cart.objects.filter(menuid=menuid)
+                      for c in crt:
+                         print(c.menuid,c.quantity)
+                         c.quantity += 1
+                         print(c.menuid,c.quantity)
+                         Cart.objects.filter(menuid=menuid).update(quantity=c.quantity)
+                else:
+                    add_times_cart = Cart(userid_id=userid,menuid_id=menuid,restid_id=rid)
+                    add_times_cart.save()
                 messages.success(request, 'Item added to cart successfully.')
         
-         
         price=itotal=total=0
         
         
@@ -103,6 +138,10 @@ def restdetails(request,rid):
              delcharge=60
         elif total>=2000:
              delcharge=90
+
+
+      
+
         context ={
                      'restall':restall ,
                      'categories':categories,
@@ -112,7 +151,7 @@ def restdetails(request,rid):
                        
                 }
         
-        
+       
 
         return render(request,'user/restdetails.html',context)
 
@@ -172,7 +211,24 @@ def checkout(request):
         uid = request.session['id']
         address=Checkoutadd.objects.filter(userid=uid)
         uaddress=userreg.objects.filter(id=uid)
-       
+        order_adr =Order.objects.filter(userid=uid,date=date.today())
+        order_count=Order.objects.filter(userid=uid,date=date.today()).count()
+        print(order_count)
+        if request.method == "POST":
+                adr=request.POST["adr"]
+                uid=request.session["id"]
+                characters = string.digits
+                orderid = ''.join(random.choice(characters) for i in range(8))
+                listcrt=[]
+                cartitems=Cart.objects.filter(userid=uid)
+                for c in cartitems:
+                    listcrt.append(c.id)
+        
+                save_order_values=Order.objects.create(userid_id=uid,adrid_id=adr,orderid=orderid)
+                save_order_values.save()
+                for i in listcrt:
+                    print(i)
+                    save_order_values.cartid.add(Cart.objects.get(id=i))
         
         for i in crt:
           price = i.menuid.iprice * i.quantity
@@ -204,6 +260,8 @@ def checkout(request):
                 "total" : total,
                 "delcharge":delcharge, 
                 'crt':crt,
+                'order_count':order_count,
+                'order_adr':order_adr,
                 'uaddress':uaddress,
                 'address':address,
             }
@@ -259,15 +317,8 @@ def useraddress(request):
           
 
 def order_complete(request):
-    if request.method=="POST":
-        adr=request.POST["adr"]
-        uid = request.session['id']
-        characters = string.digits
-        orderid = ''.join(random.choice(characters) for i in range(8))
-        listcrt=[]
-        cartitems=Cart.objects.filter(userid=uid)
-        for c in cartitems:
-              listcrt.append(c.id)
+
+       
        #saveorder=
     Cart.objects.filter(userid=request.session['id']).update(payment_status=True)
     return render(request,'user/order_complete.html')

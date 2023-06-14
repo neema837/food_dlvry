@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <button id="add-button">Add</button>
+    <button id="apply-button">Apply</button>
+
+
+        
+    <div id="content1" class="content">
+      <!-- Content for the first div -->
+    </div>
+    
+    <div id="content2" class="content">
+      <!-- Content for the second div -->
+    </div>
+    
+    <button id="showContent1">Show Content 1</button>
+    <button id="showContent2">Show Content 2</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+          $('#apply-button').click(function() {
+            $('#add-button').hide();
+          });
+        });
+
+        $(document).ready(function() {
+          // Show Content 1 on button click
+          $("#showContent1").click(function() {
+            $(".content").hide(); // Hide all div elements
+            $("#content1").show(); // Show Content 1
+          });
+          
+          // Show Content 2 on button click
+          $("#showContent2").click(function() {
+            $(".content").hide(); // Hide all div elements
+            $("#content2").show(); // Show Content 2
+          });
+        });
+    </script>
+    
+</body>
+</html>

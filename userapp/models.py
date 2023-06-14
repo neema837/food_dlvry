@@ -28,6 +28,7 @@ class Cart(models.Model):
     quantity=models.PositiveIntegerField(default=1)
     created_at=models.DateTimeField(default=timezone.now)
     payment_status=models.BooleanField(default=False)
+
     
 class Checkoutadd(models.Model):
     userid=models.ForeignKey(userreg, on_delete=models.CASCADE,null=True,blank=True)
@@ -42,7 +43,8 @@ class Order(models.Model):
     adrid=models.ForeignKey(Checkoutadd, on_delete=models.CASCADE,null=True,blank=True)
     cartid=models.ManyToManyField(Cart)
     orderid=models.IntegerField(null=True,blank=True)
-    status=models.BooleanField(default=True)
+    status=models.BooleanField(default=False)
+    date= models.DateField(default=timezone.now)
 
    
 

@@ -3,6 +3,7 @@ from.import views
 
 urlpatterns=[
     path('login',views.login,name="login"),
+    path('ulogout',views.ulogout,name="ulogout"),
     path('signup',views.signup,name="signup"),
     path('verification',views.verification,name="verification"),
     path('userhome',views.userhome,name="userhome"),
@@ -14,6 +15,4 @@ urlpatterns=[
     path('increment_quantit<int:cart_id>',views.increment_quantit,name="increment_quantit"),
     path('decrement_quantit<int:cart_id>',views.decrement_quantit,name="decrement_quantit"),
     path('useraddress',views.useraddress,name="useraddress"),
-
-    
 ]

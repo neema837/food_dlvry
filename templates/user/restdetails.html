@@ -130,7 +130,7 @@
     <a class="dropdown-item" href="contact-us.html">Contant us</a>
     <a class="dropdown-item" href="terms.html">Term of use</a>
     <a class="dropdown-item" href="privacy.html">Privacy policy</a>
-    <a class="dropdown-item" href="login.html">Logout</a>
+    <a class="dropdown-item" href="ulogout">Logout</a>
     </div>
     </div>
     
@@ -310,19 +310,52 @@
                     </div>
                     <span class="ms-auto">
 
-                      {% if menu.cart_status %}
+                {% with found=False %}
+                        {% if not found %}
+                        <!-- Product is not available in the cart -->
+                        <button id="add-button"  class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#extras{{menu.id}}">Add +</button>
+                        {% endif %}
+                        {% for crt in cartitem %}
+                            {% if crt.menuid.id == menu.id %}
+                                {% with found=True %}
+                                    <!-- Product is available in the cart -->
+                                    <button class="btn btn-success">in Cart</button>
+                                {% endwith %}
+                            {% endif %}
+                        {% endfor %}
 
-                      <a class="btn btn-success w-100 btn-lg" href="#">Added</a>
+                {% endwith %}
 
-                             {% else %}
-                             <a href="#" class="btn btn-danger w-100 btn-lg"  data-bs-toggle="modal" data-bs-target="#extras{{menu.id}}">ADD</a>
 
-                      {% endif %}
+
+                        {% comment %} {% if menu.cart_status %}
+                        <button class="btn btn-success" > Added</button>   {{menu.cart_status}}                             
+                        {% else %}
+                        <a href="#" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#extras{{menu.id}}">Add</a>
+                        {% endif %} {% endcomment %}
+
+                        {% comment %} {% url 'increment_quantity' cart.id %}
+                        {% url 'decrement_quantity' cart.id %} 
+                        
+                        <a href="#" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#extras{{menu.id}}">Add</a>
+                        
+                        {% endcomment %}
+
+                       
+
+
+
+
+
+
+             
                         
                     </span>
                 </div>
             </div>
         </div>
+
+       
 
         <!--***********modal**************-->
 <div class="modal fade" id="extras{{ menu.id }}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -349,7 +382,6 @@
     <form method="post" > 
         {% csrf_token %}
         
-
     <input type="hidden" name="menuid" value="{{ menu.id }}">
     <h6 class="fw-bold mt-4">QUANTITY</h6>
     
@@ -366,7 +398,19 @@
     <button type="button" class="btn border-top btn-lg w-100" data-bs-dismiss="modal">Close</button>
     </div>
     <div class="col-6 m-0 p-0">
-    <button type="submit" onclick="myFunction()" class="btn btn-primary btn-lg w-100">Apply</button>
+    <button type="submit" id="apply-button" onclick="myFunction()" class="btn btn-primary btn-lg w-100">Apply</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('#apply-button').click(function() {
+            $('#add-button').hide();
+          });
+        });
+    </script>
+        
+
+
     </div>
     </form>
     {% for msg in messages %}
